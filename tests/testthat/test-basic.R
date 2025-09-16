@@ -1,0 +1,10 @@
+test_that("np_quantile_causality returns classed object", {
+  set.seed(1234)
+  x <- arima.sim(n = 600, list(ar = 0.4))
+  y <- 0.5*lag(x, -1) + rnorm(600)
+  y[is.na(y)] <- mean(y, na.rm = TRUE)
+  obj <- np_quantile_causality(x, y, type = "mean", q = c(0.25, 0.5, 0.75))
+  expect_s3_class(obj, "np_quantile_causality")
+  expect_true(is.numeric(obj$statistic))
+  expect_equal(length(obj$statistic), 3L)
+})

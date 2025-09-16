@@ -1,0 +1,22 @@
+citHeader("To cite this package in publications, please use:")
+
+bibentry(
+  bibtype = "Article",
+  title   = "Does uncertainty move the gold price? New evidence from a nonparametric causality-in-quantiles test",
+  author  = as.person(c("Mehmet Balcilar", "Rangan Gupta", "Christian Pierdzioch")),
+  journal = "Resources Policy",
+  year    = 2016,
+  volume  = "49",
+  pages   = "74--80"
+)
+
+bibentry(
+  bibtype = "Article",
+  title   = "Does economic policy uncertainty predict exchange rate returns and volatility? Evidence from a nonparametric causality-in-quantiles test",
+  author  = as.person(c("Mehmet Balcilar", "Rangan Gupta", "Clement Kyei", "Mark E. Wohar")),
+  journal = "Open Economies Review",
+  year    = 2016,
+  volume  = "27",
+  number  = "2",
+  pages   = "229--250"
+)

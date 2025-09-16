@@ -1,22 +1,49 @@
-# nonParQuntileCausality
+# nonParQuantileCausality
 
-Nonparametric Quantile Causality Test  
+Implements the nonparametric causality-in-quantiles test.
 
-lrq.causality.test(x, y, type=c("mean","variance"), q=NULL, hm=NULL)  
+**Lag order:** first-order only (uses $x_{t-1}$ and $y_{t-1}$).
 
-x = numeric vector, cause (independent) variable   
-y = numeric vector, dependent variable  
-q = vector of quatiles, default = 0.01,....,0.99   
-type = "mean" for causality in mean test,  
-       "variance" for causality in variance test   
-hm = numeric scalar, bandwidth,  
-     if NULL  optimal bandwith of Yu and Jones (1998) is used  
+## Install (dev)
 
-code only considers first lags of x and y. 
+```r
+# install.packages("devtools")
+devtools::install_local("nonParQuantileCausality")
+```
 
-Returns:  
-   stat = vector t statistics for causality at each quantile   
-   q = vector of quantiles 
+## Example
 
-Mehmet Balcilar, 2014-7-4  
+```r
+library(nonParQuantileCausality)
+set.seed(1)
+x <- arima.sim(n = 600, list(ar = 0.4))
+y <- 0.5*dplyr::lag(x, 1) + rnorm(600)  # if dplyr present; otherwise build your own lag
+y[is.na(y)] <- mean(y, na.rm = TRUE)
+
+obj <- np_quantile_causality(x, y, type = "mean", q = seq(0.1, 0.9, 0.1))
+plot(obj)
+```
+
+```r
+library(nonParQuantileCausality)
+data(gold_oil)
+
+obj <- np_quantile_causality(
+  x = gold_oil$Oil, y = gold_oil$Gold,
+  type = "mean", q = seq(0.05, 0.95, 0.05)
+)
+plot(obj)
+```
+
+## References
+
+- Balcilar, M., Gupta, R., & Pierdzioch, C. (2016).
+  *Does uncertainty move the gold price?* New evidence from a nonparametric causality-in-quantiles test.
+  _Resources Policy_, 49, 74–80.
+
+- Balcilar, M., Gupta, R., Kyei, C., & Wohar, M. E. (2016).
+  *Does economic policy uncertainty predict exchange rate returns and volatility?*
+  Evidence from a nonparametric causality-in-quantiles test.
+  _Open Economies Review_, 27(2), 229–250.
+  
 

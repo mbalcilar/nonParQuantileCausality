@@ -1,0 +1,32 @@
+Package: nonParQuantileCausality
+Type: Package
+Title: Nonparametric Causality in Quantiles Test
+Version: 0.1.0
+Authors@R: 
+    c(
+      person("Mehmet", "Balcilar", role = c("aut", "cre"), email = "mehmet@mbalcilar.net")
+    )
+Author: Mehmet Balcilar [aut, cre]
+Maintainer: Mehmet Balcilar <mehmet@mbalcilar.net>
+Description: Implements the nonparametric causality-in-quantiles test (in mean or variance),
+    returning a test object with an S3 plot() method. The current implementation uses one lag
+    of each series (first-order Granger setup).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: bzip2
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 3.6)
+Imports:
+    stats,
+    ggplot2,
+    quantreg,
+    KernSmooth
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
