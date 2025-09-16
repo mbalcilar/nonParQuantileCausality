@@ -1,0 +1,43 @@
+---
+title: "Getting started with nonParQuantileCausality"
+output: rmarkdown::html_vignette
+bibliography: references.bib
+vignette: >
+  %\VignetteIndexEntry{Getting started with nonParQuantileCausality}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+We follow the testing framework introduced in @balcilar2016gold and @balcilar2016ePUfx.
+
+```{r}
+library(nonParQuantileCausality)
+data(gold_oil)
+# use first 500 rows
+gold_oil <- gold_oil[1:501,]
+q_grid <- seq(0.10, 0.90, by = 0.10)
+
+# Causality in conditional mean (does Oil_t-1 cause Gold_t?)
+res_mean <- np_quantile_causality(
+  x = gold_oil$Oil,
+  y = gold_oil$Gold,
+  type = "mean",
+  q = q_grid
+)
+res_mean
+
+# Causality in conditional variance
+res_var <- np_quantile_causality(
+  x = gold_oil$Oil,
+  y = gold_oil$Gold,
+  type = "variance",
+  q = q_grid
+)
+res_var
+
+# Plot (with 5% critical value line); returns a ggplot object invisibly
+plot(res_mean)
+plot(res_var)
+```
+

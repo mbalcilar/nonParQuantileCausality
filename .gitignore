@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+/Meta/
+.github
+.DS_Store
+gitignore
+.Rhistory
+..Rcheck
