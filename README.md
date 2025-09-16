@@ -8,7 +8,7 @@ Implements the nonparametric causality-in-quantiles test.
 
 ```r
 # install.packages("devtools")
-devtools::install_local("nonParQuantileCausality")
+devtools::install_github("https://github.com/mbalcilar/nonParQuantileCausality")
 ```
 
 ## Example
