@@ -1,4 +1,4 @@
-# nonParQuntileCausality
+# nonParQuantileCausality
 
 Nonparametric Quantile Causality Test  
 
