@@ -2,7 +2,9 @@
 #'
 #' @description
 #' Computes the Balcilar-Jeong-Nishiyama style nonparametric quantile
-#' Granger-causality test for first-order lags.
+#' Granger-causality test for first-order lags. Methodology is based on 
+#' Balcilar, Gupta, and Pierdzioch (2016, \doi{10.1016/j.resourpol.2016.04.004})
+#' and Balcilar et al. (2016, \doi{10.1007/s11079-016-9388-x}).
 #'
 #' @param x numeric vector; candidate cause (independent) variable. The test internally uses the
 #'   **first lag** of x (one-lag Granger causality setup).
@@ -42,7 +44,7 @@
 #' in this release.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' set.seed(1234)
 #' x <- arima.sim(n = 600, list(ar = 0.4))
 #' y <- 0.5*lag(x, -1) + rnorm(600)  # x Granger-causes y
@@ -77,17 +79,6 @@
 #' # Plot (with 5% critical value line); returns a ggplot object invisibly
 #' plot(res_mean)
 #' plot(res_var)
-#'
-#' # Save figures (optional; not run on CRAN)
-#' png(file = "figure_mean.png", height = 14, width = 22, units = "cm",
-#' res = 360, bg = "transparent")
-#' plot(res_mean)
-#' dev.off()
-#'
-#' png(file = "figure_variance.png", height = 14, width = 22, units = "cm",
-#'    res = 360, bg = "transparent")
-#'    plot(res_var)
-#' dev.off()
 #' }
 #'
 #' @section References:
@@ -95,10 +86,12 @@
 #'   \item Balcilar, M., Gupta, R., & Pierdzioch, C. (2016).
 #'         Does uncertainty move the gold price? New evidence from a nonparametric
 #'         causality-in-quantiles test. \emph{Resources Policy}, 49, 74–80.
+#'         \doi{10.1016/j.resourpol.2016.04.004}
 #'   \item Balcilar, M., Gupta, R., Kyei, C., & Wohar, M. E. (2016).
 #'         Does economic policy uncertainty predict exchange rate returns and volatility?
 #'         Evidence from a nonparametric causality-in-quantiles test.
 #'         \emph{Open Economies Review}, 27(2), 229–250.
+#'         \doi{10.1007/s11079-016-9388-x}
 #' }
 #'
 #' @export

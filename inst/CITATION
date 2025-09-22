@@ -7,7 +7,8 @@ bibentry(
   journal = "Resources Policy",
   year    = 2016,
   volume  = "49",
-  pages   = "74--80"
+  pages   = "74--80",
+  doi   = "10.1016/j.resourpol.2016.04.004"
 )
 
 bibentry(
@@ -18,5 +19,6 @@ bibentry(
   year    = 2016,
   volume  = "27",
   number  = "2",
-  pages   = "229--250"
+  pages   = "229--250",
+  doi   = "10.1007/s11079-016-9388-x"
 )

@@ -10,8 +10,12 @@ Author: Mehmet Balcilar [aut, cre]
 Maintainer: Mehmet Balcilar <mehmet@mbalcilar.net>
 Description: Implements the nonparametric causality-in-quantiles test (in mean or variance),
     returning a test object with an S3 plot() method. The current implementation uses one lag
-    of each series (first-order Granger setup).
+    of each series (first-order Granger causality setup). Methodology is based on 
+    Balcilar, Gupta, and Pierdzioch (2016a) <doi:10.1016/j.resourpol.2016.04.004> and 
+    Balcilar et al. (2016) <doi:10.1007/s11079-016-9388-x>.
 License: MIT + file LICENSE
+URL: https://www.mbalcilar.net,
+     https://github.com/mbalcilar/nonParQuantileCausality
 Encoding: UTF-8
 LazyData: true
 LazyDataCompression: bzip2
@@ -30,3 +34,4 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
+

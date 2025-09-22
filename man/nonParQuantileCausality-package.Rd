@@ -24,6 +24,14 @@ The current implementation uses \strong{one lag} of each series (first-order Gra
 }
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://www.mbalcilar.net}
+  \item \url{https://github.com/mbalcilar/nonParQuantileCausality}
+}
+
+}
 \author{
 \strong{Maintainer}: Mehmet Balcilar \email{mehmet@mbalcilar.net}
 
